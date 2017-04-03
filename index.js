@@ -31,7 +31,8 @@ module.exports = function BubleLoader(source, inputSourceMap) {
     try {
         transformed = buble.transform(source, Object.assign({
             transforms: {
-                modules: false
+                modules: false,
+                dangerousTaggedTemplateString: true
             }
         }, this.options.buble, loaderOptions));
     } catch (err) {
